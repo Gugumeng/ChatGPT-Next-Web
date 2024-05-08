@@ -134,6 +134,12 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro-vision": "2023-12",
 };
 
+const aliModels = [
+  "qwen-max",
+  "qwen-plus",
+  "qwen-turbo"
+];
+
 const openaiModels = [
   "gpt-3.5-turbo",
   "gpt-3.5-turbo-1106",
@@ -164,6 +170,15 @@ const anthropicModels = [
 ];
 
 export const DEFAULT_MODELS = [
+  ...openaiModels.map((name) => ({
+    name,
+    available: true,
+    provider: {
+      id: "qianwen",
+      providerName: "Qianwen",
+      providerType: "qianwen",
+    },
+  })),
   ...openaiModels.map((name) => ({
     name,
     available: true,
