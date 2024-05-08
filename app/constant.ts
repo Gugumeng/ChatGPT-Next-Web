@@ -170,7 +170,7 @@ const anthropicModels = [
 ];
 
 export const DEFAULT_MODELS = [
-  ...openaiModels.map((name) => ({
+  ...aliModels.map((name) => ({
     name,
     available: true,
     provider: {
