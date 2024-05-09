@@ -134,6 +134,10 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro-vision": "2023-12",
 };
 
+const chatGLM = [
+  "chatglm_turbo"
+];
+
 const aliModels = [
   "qwen-max",
   "qwen-plus",
@@ -170,42 +174,51 @@ const anthropicModels = [
 ];
 
 export const DEFAULT_MODELS = [
-  ...aliModels.map((name) => ({
+  ...chatGLM.map((name) => ({
     name,
     available: true,
     provider: {
-      id: "qianwen",
-      providerName: "Qianwen",
-      providerType: "qianwen",
+      id: "chatGLM",
+      providerName: "ChatGLM",
+      providerType: "chatGLM",
     },
   })),
-  ...openaiModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  })),
-  ...googleModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "google",
-      providerName: "Google",
-      providerType: "google",
-    },
-  })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-    },
-  })),
+  // ...aliModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "qianwen",
+  //     providerName: "Qianwen",
+  //     providerType: "qianwen",
+  //   },
+  // })),
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "openai",
+  //     providerName: "OpenAI",
+  //     providerType: "openai",
+  //   },
+  // })),
+  // ...googleModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "google",
+  //     providerName: "Google",
+  //     providerType: "google",
+  //   },
+  // })),
+  // ...anthropicModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "Anthropic",
+  //     providerType: "anthropic",
+  //   },
+  // })),
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
